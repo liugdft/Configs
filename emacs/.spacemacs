@@ -1,5 +1,5 @@
 ;;;;;;;;;;
-; Modified on 2016.10.30
+; Modified on 2016.11.14
 ; File: ~/.spacemacs
 ;;;;;;;;;;
 
@@ -264,6 +264,17 @@ you should place your code here."
   (global-linum-mode t)
   (linum-relative-global-mode t)
   (setq evil-want-fine-undo t)
+
+  ;; change TODO keywords and colors
+  (setq org-todo-keywords 
+        '((sequence "TODO" "DELAY" "TBP" "REVIEW" "|" "CANCELED" "DONE")))
+  (setq org-todo-keyword-faces
+        '(("TODO" . "orange")
+          ("DELAY" . "yellow")
+          ("TBP" . "red")
+          ("REVIEW" . "orange")
+          ("CANCELED" . "red")
+          ("DONE" . "green")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
