@@ -1,5 +1,5 @@
 """"""""""
-" Modified on 2016.10.30
+" Modified on 2017.01.10
 " File: ~/.vimrc
 """"""""""
 
@@ -28,10 +28,7 @@ set nobackup
 set noswapfile
 
 " 共享剪贴板 
-set clipboard=unnamed 
-
-" 从不备份  
-set nobackup
+set clipboard+=unnamed 
 
 " 突出显示当前行
 set cursorline
@@ -54,7 +51,8 @@ set noeb
 
 " 自动缩进
 set autoindent
-set cindent
+set smartindent
+set pastetoggle=<F8>
 
 " Tab键的宽度
 set tabstop=4
@@ -63,8 +61,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" 不要用空格代替制表符
-set noexpandtab
+" 用空格代替制表符
+set expandtab
 
 " 在行和段开始处使用制表符
 set smarttab
@@ -147,6 +145,8 @@ Plugin 'klen/python-mode'
 """"""""""
 " golang语言插件
 Plugin 'fatih/vim-go'
+let g:go_fmt_autosave = 0                                                       
+autocmd BufNewFile,BufRead *.go setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 """"""""""
 
 """"""""""
