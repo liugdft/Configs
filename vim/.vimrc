@@ -1,5 +1,5 @@
 """"""""""
-" Modified on 2017.01.10
+" Modified on 2017.01.17
 " File: ~/.vimrc
 """"""""""
 
@@ -61,8 +61,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" 用空格代替制表符
-set expandtab
+" 不用空格代替制表符
+set noexpandtab
 
 " 在行和段开始处使用制表符
 set smarttab
@@ -145,8 +145,8 @@ Plugin 'klen/python-mode'
 """"""""""
 " golang语言插件
 Plugin 'fatih/vim-go'
-let g:go_fmt_autosave = 0                                                       
-autocmd BufNewFile,BufRead *.go setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+let g:go_fmt_autosave = 1
+" autocmd BufNewFile,BufRead *.go setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
 """"""""""
 
 """"""""""
