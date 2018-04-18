@@ -1,5 +1,5 @@
 """"""""""
-" Modified on 2017.01.17
+" Modified on 2018.04.13
 " File: ~/.vimrc
 """"""""""
 
@@ -12,6 +12,9 @@ filetype off                  " required
 " 开启语法高亮
 syntax enable
 syntax on
+
+" 解决 mac 上面个 delete 不能删除的问题
+set backspace=2
 
 " 显示行号
 set number
@@ -134,7 +137,7 @@ Plugin 'plasticboy/vim-markdown'
 
 """"""""""
 " 解决org-mode的一个报错
-Plugin 'tpope/vim-speeddating'
+"Plugin 'tpope/vim-speeddating'
 """"""""""
 
 """"""""""
@@ -152,12 +155,14 @@ let g:go_fmt_autosave = 1
 """"""""""
 " tag插件
 Plugin 'majutsushi/tagbar'
+map <F3> :TagbarToggle<CR>
 """"""""""
 
 """"""""""
 " 文件搜索插件
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_match_window = 'min:1,max:10,results:50'
 """"""""""
 
 """"""""""
@@ -169,6 +174,15 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-easytags'
+" easytags 依赖 vim-misc
+Plugin 'xolox/vim-misc'
+map <F4> :UpdateTags<CR>
+""""""""""
+
+""""""""""
+" 批量注释插件
+Plugin 'scrooloose/nerdcommenter'
 """"""""""
 
 " All of your Plugins must be added before the following line
